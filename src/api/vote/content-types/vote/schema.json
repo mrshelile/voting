@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "votes",
+  "info": {
+    "singularName": "vote",
+    "pluralName": "votes",
+    "displayName": "vote",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "voter": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::voter.voter"
+    },
+    "voteId": {
+      "type": "uid"
+    },
+    "partie": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::partie.partie",
+      "inversedBy": "votes"
+    }
+  }
+}

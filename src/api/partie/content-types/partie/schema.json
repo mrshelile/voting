@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "parties",
+  "info": {
+    "singularName": "partie",
+    "pluralName": "parties",
+    "displayName": "Partie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "leader": {
+      "type": "string"
+    },
+    "code": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "votes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vote.vote",
+      "mappedBy": "partie"
+    }
+  }
+}

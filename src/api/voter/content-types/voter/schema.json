@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "voters",
+  "info": {
+    "singularName": "voter",
+    "pluralName": "voters",
+    "displayName": "voter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "full_names": {
+      "type": "string"
+    },
+    "ID_Number": {
+      "type": "biginteger"
+    },
+    "Place_of_Birth": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "hasVoted": {
+      "type": "boolean",
+      "default": false
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "voter"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}
